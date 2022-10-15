@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 // import { useState } from 'react';
 // import { nanoid } from 'nanoid';
 import scss from './contactForm.module.scss';
-import { Formik, ErrorMessage } from 'formik';
+import { Formik, ErrorMessage, Form, Field } from 'formik';
 import * as yup from 'yup';
 
 const FormError = ({ name }) => {
@@ -27,10 +27,10 @@ export default function ContactForm({ submitForm }) {
       initialValues={baseValues}
       validationSchema={schema}
     >
-      <form className={scss.form}>
+      <Form className={scss.form}>
         <label className={scss.formLabel}>
           <span>Name</span>
-          <input
+          <Field
             className={scss.formInput}
             // value={name}
             // onChange={e => setName(e.target.value)}
@@ -44,7 +44,7 @@ export default function ContactForm({ submitForm }) {
         </label>
         <label className={scss.formLabel}>
           <span>Number</span>
-          <input
+          <Field
             className={scss.formInput}
             // value={phone}
             // onChange={e => setNumber(e.target.value)}
@@ -59,7 +59,7 @@ export default function ContactForm({ submitForm }) {
         <button className={scss.btn} type="submit">
           Add contact
         </button>
-      </form>
+      </Form>
     </Formik>
   );
 }
