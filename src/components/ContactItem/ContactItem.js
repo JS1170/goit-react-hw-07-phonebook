@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import scss from './contactItem.module.scss';
 
-export function ContactItem({ id, name, number, deleteBtn }) {
+export function ContactItem({ id, name, phone, deleteBtn }) {
   return (
     <li className={scss.item}>
-      {name}: {number}
+      {name}: {phone}
       <button
         className={scss.btnItem}
         type="button"
@@ -20,6 +20,6 @@ export function ContactItem({ id, name, number, deleteBtn }) {
 
 ContactItem.propTypes = {
   name: PropTypes.string.isRequired,
-  number: PropTypes.string.isRequired,
+  phone: PropTypes.string.isRequired,
   deleteBtn: PropTypes.func.isRequired,
 };
